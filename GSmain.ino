@@ -39,8 +39,9 @@ uint8_t battlephase = 32;
 uint8_t maphold[2] = {3, 4};
 uint8_t mapoffset = 0;
 uint8_t stepcnt = 0;
-uint8_t timecntT = 0;
 uint8_t previous = 0;
+//Counter for battle animation
+uint8_t timecntT = 0;
 //===================================================================
 //Arrays for default unit and weapon status (fixed)
 uint16_t unitStat[14] = {3422, 1215, 2341, 3323, 2314, 1161, 3322, 1223, 2232, 2341, 3512, 1233, 3422, 2343};
@@ -96,7 +97,7 @@ void setup() {
       
     }
   FX::saveGameState(gameState);         // save the gameState to FX 4K save block
-
+  FX::loadGameState(gameState);
   
   //Seed the random number generator----------------------------
   arduboy.initRandomSeed();
@@ -137,19 +138,6 @@ void gameloop(){
       gamemode = 3;
       break;
 
-    /*//Logo 2============================================================================
-    case 1:
-      FX::drawBitmap(0, 0, Full, 0, dbmNormal);
-      if (arduboy.pressed(A_BUTTON))      //To Title
-        gamemode = 2;    
-      break;
-
-
-    //Title screen 1======================================================================
-    case 2:
-      title();
-      break;
-    */
     
     //Title screen 2======================================================================
     case 3:
