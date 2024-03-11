@@ -1861,7 +1861,7 @@ void battleCases(){
           battleEnd(1);
           if (arduboy.pressed(A_BUTTON) && arduboy.everyXFrames(3)){
             //if drop weapon (5%) or 100% drop if defeated boss
-            if(roll(5) == 1 || area == 39 || area == 59 || area == 79 || area == 100){
+            if(roll(10) == 1 || area == 39 || area == 59 || area == 79 || area == 100){
               battlephase = 27;
             }
             else
