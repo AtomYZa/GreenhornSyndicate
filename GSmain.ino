@@ -1641,7 +1641,7 @@ void battleCases(){
                   //gain exp
                   gameState.playerexp = gameState.playerexp + enemylevel;
                   //check level up
-                  if(gameState.playerexp >= (gameState.playerlevel * 20)){
+                  if(gameState.playerexp >= (gameState.playerlevel * 10)){
                       gameState.playerlevel++;
                     //reset exp
                     gameState.playerexp = 0;
